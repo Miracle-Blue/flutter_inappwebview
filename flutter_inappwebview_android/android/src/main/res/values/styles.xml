@@ -9,6 +9,10 @@
     </style>
 
     <style name="ThemeTransparent" parent="android:Theme">
+        <!-- Selection handle color -->
+        <item name="colorControlActivated">#4285f4</item>
+        <item name="android:colorControlActivated">#4285f4</item>
+
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowContentOverlay">@null</item>
