@@ -14,6 +14,9 @@ import android.widget.ListPopupWindow;
 
 import androidx.annotation.Nullable;
 
+import android.view.ContextThemeWrapper;
+import com.pichillilorenzo.flutter_inappwebview_android.R;
+
 /**
  * A WebView subclass that mirrors the same implementation hacks that the system WebView does in
  * order to correctly create an InputConnection.
@@ -31,23 +34,23 @@ public class InputAwareWebView extends WebView {
   private boolean useHybridComposition = false;
 
   public InputAwareWebView(Context context, @Nullable View containerView, Boolean useHybridComposition) {
-    super(context);
+    super(new ContextThemeWrapper(context, R.style.MyCustomTheme));
     this.containerView = containerView;
     this.useHybridComposition = useHybridComposition == null ? false : useHybridComposition;
   }
 
   public InputAwareWebView(Context context, AttributeSet attrs) {
-    super(context, attrs);
+    super(new ContextThemeWrapper(context, R.style.MyCustomTheme), attrs);
     this.containerView = null;
   }
 
   public InputAwareWebView(Context context) {
-    super(context);
+    super(new ContextThemeWrapper(context, R.style.MyCustomTheme));
     this.containerView = null;
   }
 
   public InputAwareWebView(Context context, AttributeSet attrs, int defaultStyle) {
-    super(context, attrs, defaultStyle);
+    super(new ContextThemeWrapper(context, R.style.MyCustomTheme), attrs, defaultStyle);
     this.containerView = null;
   }
 
